@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oficina Mecânica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Oficina Mecânica</h1>
+    <div class="form-container">
+        <h2>Criar Nota de Serviço</h2>
+        <input type="text" id="customer-name" placeholder="Nome do Cliente" required>
+        <input type="text" id="vehicle-model" placeholder="Modelo do Veículo" required>
+        <div id="services-container">
+            <div class="service">
+                <input type="text" placeholder="Serviço Realizado" required>
+                <input type="number" placeholder="Valor do Serviço (R$)" required oninput="updateTotalValue()">
+            </div>
+        </div>
+        <button onclick="addService()">Adicionar Serviço</button>
+        <h3>Valor Total: R$ <span id="total-value">0</span></h3>
+        <button onclick="createNote()">Adicionar Nota</button>
+    </div>
+    <div class="notes-container">
+        <h2>Notas</h2>
+        <input type="text" id="search-bar" placeholder="Pesquisar por nome" oninput="filterNotes()">
+        <div id="notes-list"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
